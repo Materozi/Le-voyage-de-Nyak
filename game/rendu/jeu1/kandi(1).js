@@ -16,7 +16,7 @@
       'bg'            : 'imgs/bg.png',
       'sky'           : 'imgs/sky.png',
       'backdrop'      : 'imgs/backdrop.png',
-      'backdrop2'     : 'imgs/backdrop_ground.png',
+      'backdrop2'     : 'imgs/frise4.png',
       'grass'         : 'imgs/grass(1).png', //sol pour marger si on l'enleve le perso disparaît
       'avatar_normal' : 'imgs/nyak_marche.png'//avatar
     };
@@ -200,7 +200,7 @@
       backdrop.speed = 0,3;
 
       backdrop2.x = -800;
-      backdrop2.y = -100;
+      backdrop2.y = -5;
       backdrop2.speed = 3;
     }
 
