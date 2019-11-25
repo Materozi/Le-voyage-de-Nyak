@@ -201,7 +201,7 @@
 
       backdrop2.x = -800;
       backdrop2.y = -5;
-      backdrop2.speed = 3;
+      backdrop2.speed = 4;
     }
 
     return {

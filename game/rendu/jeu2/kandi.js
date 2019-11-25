@@ -252,7 +252,7 @@ function Animation(spritesheet, frameSpeed, startFrame, endFrame) {
 /**
  * Create a parallax background
  */
-var background = (function() {
+  var background = (function() {
   var sky   = {};
   var backdrop = {};
   var backdrop2 = {};
