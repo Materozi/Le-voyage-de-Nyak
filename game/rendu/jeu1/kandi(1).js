@@ -1,5 +1,5 @@
 (function () {
-  // define variables
+  // variables
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var player = {};
@@ -8,7 +8,7 @@
   var platformHeight = canvas.height - platformWidth * 6;
 
   /**
-   * Asset pre-loader object. Loads all images
+   * Asset pre-loader object. les images
    */
   var assetLoader = (function() {
     // images dictionary
@@ -52,7 +52,7 @@
       var _this = this;
       var src;
 
-      // load images
+      // pour faire apparaître les images
       for (var img in this.imgs) {
         if (this.imgs.hasOwnProperty(img)) {
           src = this.imgs[img];
@@ -91,7 +91,7 @@
     this.frameWidth = frameWidth;
     this.frameHeight = frameHeight;
 
-    // calculate the number of frames in a row after the image loads
+    // calculer le nombre d'images dans une rangée après le chargement de l'image
     var self = this;
     this.image.onload = function() {
       self.framesPerRow = Math.floor(self.image.width / self.frameWidth);
@@ -101,7 +101,7 @@
   }
 
   /**
-   * Creates an animation from a spritesheet.
+   * Creer une animation avec spritesheet.
    * @param {SpriteSheet} - The spritesheet used to create the animation.
    * @param {number}      - Number of frames to wait for before transitioning the animation.
    * @param {array}       - Range or sequence of frame numbers for the animation.
@@ -113,7 +113,7 @@
     var currentFrame = 0;        // the current frame to draw
     var counter = 0;             // keep track of frame rate
 
-    // start and end range for frames
+    // debut et fin
     for (var frameNumber = startFrame; frameNumber <= endFrame; frameNumber++)
       animationSequence.push(frameNumber);
 
@@ -150,7 +150,7 @@
   }
 
   /**
-   * Create a parallax background
+   * Creer un parallax background
    */
   var background = (function() {
     var sky   = {};
@@ -158,7 +158,7 @@
     var backdrop2 = {};
 
     /**
-     * Draw the backgrounds to the screen at different speeds
+     * Dessiner le backgrounds ds l'ecran a different vélocité
      */
     this.draw = function() {
       ctx.drawImage(assetLoader.imgs.bg, 0, 0);
@@ -168,7 +168,7 @@
       backdrop.x -= backdrop.speed;
       backdrop2.x -= backdrop2.speed;
 
-      // draw images side by side to loop
+      // dessiner les images side by side to loop
       ctx.drawImage(assetLoader.imgs.sky, sky.x, sky.y);
       ctx.drawImage(assetLoader.imgs.sky, sky.x + canvas.width, sky.y);
 
@@ -178,7 +178,7 @@
       ctx.drawImage(assetLoader.imgs.backdrop2, backdrop2.x, backdrop2.y);
       ctx.drawImage(assetLoader.imgs.backdrop2, backdrop2.x + canvas.width, backdrop2.y);
 
-      // If the image scrolled off the screen, reset
+      // Si l'image fait défiler l'écran, réinitialisez
       if (sky.x + assetLoader.imgs.sky.width <= 0)
         sky.x =0;
       if (backdrop.x + assetLoader.imgs.backdrop.width <= 0)
